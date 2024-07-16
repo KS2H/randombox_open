@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    background-color: transparent; /* 컨테이너 배경 투명하게 */
+}
+
+h1 {
+    color: #ffffff; /* 글자 색상을 하얀색으로 변경 */
+}
+
+#boxContainer {
+    position: relative;
+}
+
+#boxContainer img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    background-color: transparent; /* 상자 이미지 배경 투명하게 */
+}
+
+#giftContainer {
+    position: absolute;
+    top: 50px;  /* 상자의 윗 부분에 선물이 오도록 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* 선물이 상자 위에 표시되도록 설정 */
+    opacity: 0; /* 처음에는 보이지 않도록 설정 */
+    transition: opacity 2s ease-in-out; /* 2초 동안 서서히 나타나도록 설정 */
+}
+
+#giftContainer.show {
+    opacity: 1; /* show 클래스가 추가되면 선물이 보이도록 설정 */
+}
+
+#giftContainer img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
